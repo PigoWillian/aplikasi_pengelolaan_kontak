@@ -5,6 +5,16 @@ class PengelolaKontak {
         daftarKontak.add(kontak)
     }
 
+    fun hapusKontak(nama: String) {
+        val kontak = daftarKontak.find { it.nama == nama }
+        if (kontak != null) {
+            daftarKontak.remove(kontak)
+            println("$nama telah dihapus dari daftar kontak.")
+        } else {
+            println("$nama tidak ditemukan dalam daftar kontak.")
+        }
+    }
+    
     fun tampilkanKontak() {
         if (daftarKontak.isNotEmpty()) {
             println("Daftar Kontak:")
@@ -31,6 +41,11 @@ fun main() {
     val kontakBaru = Kontak(nama, nomorTelepon, email)
 
     pengelola.tambahKontak(kontakBaru)
+    pengelola.tampilkanKontak()
+    
+    println("\nMasukkan nama kontak yang ingin dihapus:")
+    val namaHapus = readLine() ?: ""
 
+    pengelola.hapusKontak(namaHapus)
     pengelola.tampilkanKontak()
 }
