@@ -20,7 +20,7 @@ class PengelolaKontak{
         if (daftarKontak.isNotEmpty()) {
             println("Daftar Kontak:")
             daftarKontak.forEach {
-                println("Nama: ${it.nama}, Nomor Telepon: ${it.nomorTelepon}, Email: ${it.email}")
+               it.cetakInformasi()
             }
         } else {
             println("Daftar kontak kosong.")
@@ -28,10 +28,9 @@ class PengelolaKontak{
     }
 }
 
-fun Kontak.infoKontak(){
-    println("Nama: ${nama}")
-    println("No Tlp: ${nomorTelepon}")
-    println("Email: ${email}")
+// Extension function untuk mencetak informasi kontak
+fun Kontak.cetakInformasi() {
+    println("Nama: $nama, Nomor Telepon: $nomorTelepon, Email: $email")
 }
 
 fun main() {
