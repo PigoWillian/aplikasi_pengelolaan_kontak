@@ -1,4 +1,5 @@
-class PengelolaKontak {
+data class Kontak(internal val nama: String, internal val nomorTelepon: String, internal val email: String)
+class PengelolaKontak{
     private val daftarKontak = mutableListOf<Kontak>()
 
     fun tambahKontak(kontak: Kontak) {
@@ -27,7 +28,16 @@ class PengelolaKontak {
     }
 }
 
+fun Kontak.infoKontak(){
+    println("Nama: ${nama}")
+    println("No Tlp: ${nomorTelepon}")
+    println("Email: ${email}")
+}
+
 fun main() {
+
+    val kontak = Kontak()
+
     val pengelola = PengelolaKontak()
 
     println("Masukkan informasi kontak:")
@@ -48,4 +58,8 @@ fun main() {
 
     pengelola.hapusKontak(namaHapus)
     pengelola.tampilkanKontak()
+
+    kontak.email
+    kontak.nomorTelepon
+    kontak.email
 }
