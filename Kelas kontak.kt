@@ -1,1 +1,1 @@
-data class Kontak(val nama: String, val nomorTelepon: String, val email: String)
+data class Kontak(internal val nama: String, internal val nomorTelepon: String, internal val email: String)
